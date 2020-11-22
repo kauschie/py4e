@@ -1,0 +1,10 @@
+hrs = input('Enter Hours: ')
+rts = input('Enter rate: ')
+pay = float(hrs) * float(rts)
+wkpay = pay * 5
+biweekly = wkpay * 2
+monthly = biweekly * 2
+print('Your daily pay is: ',pay)
+print('Your weekly pay is: ',wkpay)
+print('Your biweekly pay is: ',biweekly)
+print('Your monthly pay is: ',monthly)
