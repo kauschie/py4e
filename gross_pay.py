@@ -1,14 +1,17 @@
-<<<<<<< HEAD
-hours = int(input('Enter Hours: '))
-rate = float(input('Enter Rate: '))
-pay = hours * rate
+adjRate = 1.5
+adjHours = 0
+
+try:
+    hours = int(input('Enter Hours: '))
+    rate = float(input('Enter Rate: '))
+except:
+    print('Error, please enter numeric input')
+    quit()
+
+if hours > 40:
+    adjHours = hours - 40
+    pay = (40*rate) + (adjHours*rate*adjRate)
+else:
+    pay = hours * rate
 
 print('Pay:', pay)
-||||||| merged common ancestors
-=======
-hours = int(input('Enter Hours: '))
-rate = float(input('Enter Rate: '))
-pay = hours * rate
-
-print('Pay:',pay)
->>>>>>> a6186a621cb1bec74e04121b5f985d78a10cdb64
