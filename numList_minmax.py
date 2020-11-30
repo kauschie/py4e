@@ -20,13 +20,13 @@ while True:
     if inputstr == 'done':
         break
     try:
-        num = float(inputstr)
+        num = int(inputstr)
     except:
-        print(f"'{inputstr}' is not a number")
-        print("Please enter a valid numerical input:")
+        print('Invalid input')
         continue
     max = get_max(max, num)
     min = get_min(min, num)
 
-print("All done")
-print(max, min)
+#print("All done")
+print(f"Maximum is {max}")
+print(f"Minimum is {min}")
