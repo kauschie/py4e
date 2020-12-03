@@ -3,12 +3,10 @@
 # can use the in operator as a fast way to check whether a string is in the
 # dictionary.
 
-import random
-
-wdict = dict()
-fhandle = open('words.txt')
-for line in fhandle:
+d = {}
+fhand = open('words.txt')
+for line in fhand:
     words = line.split()
     for word in words:
-        wdict[word] = wdict.get(word, 0) + 1
-print(wdict)
+        d[word] = d.get(word,0) + 1
+print(d)
