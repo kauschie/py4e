@@ -42,8 +42,7 @@ charlimit = 3000
 while True:
     data = mysock.recv(500)
     if len(data) < 1: break
-    charsum += 500
-    if charsum >= charlimit: break
+    charsum += len(data)
     print(data.decode(),end='')
 
 print(f"\nCharacters transmitted: {charsum}")
