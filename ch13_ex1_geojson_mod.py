@@ -6,11 +6,11 @@ import urllib.request, urllib.parse, urllib.error
 import json
 import ssl
 
-# NOTE: THIS IS MY PERSONAL API KEY FOR GOOGLE.
 
-api_key = 'AIzaSyAf-mzcGtrGALc5ccGYwv4xWsA5kbdZt8A'
+
+api_key = False
 # If you have a Google Places API key, enter it here
-# api_key = 'AIzaSy___IDByT70'
+# api_key = 'AIzaSyAf-........5kbdZt8A'
 # otherwise, api_key = False
 # https://developers.google.com/maps/documentation/geocoding/intro
 
@@ -53,21 +53,4 @@ while True:
         print(data)
         continue
 
-    # prints json data
-    print(json.dumps(js, indent=4))
-
-    lat = js['results'][0]['geometry']['location']['lat']
-    lng = js['results'][0]['geometry']['location']['lng']
-    print('lat', lat, 'lng', lng)
-    location = js['results'][0]['formatted_address']
-    country_code = js['results'][0]['address_components'][-1]['short_name']
-    print(location)
-
-    # last element in address_components list always has country if it was a 
-    # country that was matched
-
-    if "country" in js['results'][0]['address_components'][-1]['types']:
-        print(f"Country Code: {country_code}")
-    else:
-        print(f"Could not print \"{address}\"'s country code because it is"
-               " not a country")
+    print(f"Place ID for '{address}' is {js['results'][0]['place_id']}")
