@@ -27,6 +27,7 @@ import re
 mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 webaddr = input('Enter the URL of the web page to read: ')
 host = re.findall('^https?://(.+)/+?',webaddr)[0]
+print('Host: ',host)
 try:
     mysock.connect((host,80))
 except:
