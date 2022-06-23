@@ -5,7 +5,7 @@ try:
     fhand = open(fname)
 except:
     print(f"'{fname}' is a bad filename or the program is in"
-          f"the wrong directory. Quitting now...")
+          f" the wrong directory. Quitting now...")
     quit()
 
 count = 0
